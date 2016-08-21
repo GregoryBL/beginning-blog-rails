@@ -12,21 +12,30 @@ class PostsController < ActionController::Base
   end
 
   def create
-    new_post = Post.new(user_params)
+    @post = Post.new(user_params)
     if new_post.save
-      redirect_to posts_path
+      redirect_to @post
     else
       render new_post_path
     end
   end
 
   def update
+    @post = Post.find(params[:id])
+    if @post.update(user_params)
+      redirect_to @post
+    else
+      render edit_post_path
+    end
   end
 
   def edit
+    @post = Post.find(params[:id])
   end
 
   def destroy
+    Post.find(params[:id]).destroy
+    redirect_to posts_path
   end
 
   private
