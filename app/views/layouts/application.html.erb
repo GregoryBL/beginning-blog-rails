@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>BeginningBlogRails</title>
+    <title>Beginner Blog</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -9,6 +9,20 @@
   </head>
 
   <body>
-    <%= yield %>
+    <header id="header" class="container">
+      <div class="row">
+        <h1 class="text-center">Beginner Blog</h1>
+      </div>
+    </header>
+    <div id="main-container" class="container">
+      <div class="row">
+        <div class="col-xs-3">
+          <h3>Nav</h3>
+        </div>
+        <div class="col-xs-9">
+          <%= yield %>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
