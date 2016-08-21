@@ -4,6 +4,7 @@ class PostsController < ActionController::Base
   end
 
   def new
+    @post = Post.new
   end
 
   def show
