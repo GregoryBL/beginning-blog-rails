@@ -17,7 +17,10 @@
     <div id="main-container" class="container">
       <div class="row">
         <div class="col-xs-3">
-          <h3>Nav</h3>
+          <ul>
+            <li><%= link_to "Home", posts_path %></li>
+            <li><%= link_to "New Post", new_post_path %></li>
+          </ul>
         </div>
         <div class="col-xs-9">
           <%= yield %>
