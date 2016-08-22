@@ -1,0 +1,15 @@
+= form_for @post, html: {role: "form"} do |f|
+  .form-group
+    = f.label :title
+    = f.text_field :title, class: "form-control"
+
+  .form-group
+    = f.label :content
+    = f.text_area :content, class: "form-control"
+
+  .form-group
+    = f.label :publish
+    = f.check_box :published, class: "form-control"
+
+  .form-group
+    = f.submit class: "form-control"
