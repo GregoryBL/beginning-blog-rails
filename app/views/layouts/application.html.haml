@@ -1,0 +1,21 @@
+!!!
+%html
+  %head
+    %title Beginner Blog
+    = csrf_meta_tags
+    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+
+  %body
+    %header.container#header
+      .row
+        %h1.text-center Beginner Blog
+
+    .container#main-container
+      .row
+        .col-xs-3
+          %ul
+            %li= link_to "Home", posts_path
+            %li= link_to "New Post", new_post_path
+        .col-xs-9
+          = yield
